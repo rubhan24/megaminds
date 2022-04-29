@@ -23,12 +23,10 @@ class Users {
     static createUser(data){
         return new Promise(async (resolve, reject) => {
             try {
-                const result = await data.map(player => {
-                         db.query(`insert into users (username, score) values ($1, $2) returning * ;`, [player.username, player.score])
+                await data.map(player => {
+                        db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [player.username, player.score])
                     })
-                    console.log(result)
-                    const allUsers = result.rows.map(player  => new Users(player))
-                    resolve(allUsers)
+                resolve(data)
             } catch (error) {
                 reject(`Failed to store user`)
             }
