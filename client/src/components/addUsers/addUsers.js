@@ -1,9 +1,10 @@
 import React from 'react'
+import './addUsers.css'
 
 function addUsers() {
   return (
-    <div>
-        <button>Add Users</button>
+    <div className="addUser">
+        <button className="adduserButton">Add Users</button>
     </div>
   )
 }

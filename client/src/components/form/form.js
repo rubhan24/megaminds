@@ -1,35 +1,36 @@
 import React from 'react'
+import './form.css'
 
 function form() {
   return (
     <div className='form'>
       <form>
-        <label className="players">
+        <ul className="players">
           Pick number of players:
-          <select value="Choose number of players">
+          <select className="playersOption" >
             <option value="onePlayer">1</option>
             <option value="twoPlayers">2</option>
             <option value="threePlayers">3</option>
             <option value="fourPlayers">4</option>
           </select>
-        </label>
-        <label className="topics">
+        </ul>
+        <ul className="topics">
           Pick topic:
-          <select value="Choose topic">
+          <select className="topicOption">
             <option value="topicOne">1</option>
             <option value="topicTwo">2</option>
             <option value="topicThree">3</option>
             <option value="topicFour">4</option>
           </select>
-        </label>
-        <label>
+        </ul>
+        <ul className="difficulty">
             Difficulty:
-          <select value="Choose difficulty">
+          <select className="difficultyOption">
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
           </select>
-        </label>
+        </ul>
 
 
       </form>
