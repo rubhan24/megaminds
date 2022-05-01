@@ -1,3 +1,3 @@
-export { default as Addusers } from './addUser';
-export { default as Form } from './form';
-export { default as Leaderboard } from './leaderboard';
+export { default as Addusers } from './AddUsers';
+export { default as Form } from './Form';
+export { default as Leaderboard } from './Leaderboard';

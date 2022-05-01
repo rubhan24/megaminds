@@ -1,7 +1,7 @@
 import React from 'react'
-import './leaderboard.css'
+import './style.css'
 
-function leaderboard() {
+function Leaderboard() {
   return (
     <div className="leaderboard">
         <button className="leaderbutton">Leaderboard</button>
@@ -9,4 +9,4 @@ function leaderboard() {
   )
 }
 
-export default leaderboard
+export default Leaderboard
