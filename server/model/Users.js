@@ -23,19 +23,30 @@ class Users {
     static createUser(data){
         return new Promise(async (resolve, reject) => {
             try {
-                const result = await data.map(player => {
-                         db.query(`insert into users (username, score) values ($1, $2) returning * ;`, [player.username, player.score])
-                    })
-                    console.log(result)
-                    const allUsers = result.rows.map(player  => new Users(player))
-                    resolve(allUsers)
+                if (data[0] && !data[1] && !data[2] && !data[3]){
+                    const player1 = await db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [data[0].username, data[0].score])
+                    resolve ([player1.rows[0]])
+                } else if (data[0] && data[1] && !data[2] && !data[3]){
+                    const player1 = await db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [data[0].username, data[0].score])
+                    const player2 = await db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [data[1].username, data[1].score])
+                    resolve ([player1.rows[0], player2.rows[0]])
+                } else if (data[0] && data[1] && data[2] && !data[3]){
+                    const player1= await db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [data[0].username, data[0].score])
+                    const player2= await db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [data[1].username, data[1].score])
+                    const player3= await db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [data[2].username, data[2].score])
+                    resolve ([player1.rows[0], player2.rows[0], player3.rows[0]])
+                } else if (data[0] && data[1] && data[2] && data[3]){
+                    const player1= await db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [data[0].username, data[0].score])
+                    const player2= await db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [data[1].username, data[1].score])
+                    const player3= await db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [data[2].username, data[2].score])
+                    const player4= await db.query(`insert into users (username, score) values ($1, $2) RETURNING *;`, [data[3].username, data[3].score])
+                    resolve ([player1.rows[0], player2.rows[0], player3.rows[0], player4.rows[0]])
+                }
             } catch (error) {
                 reject(`Failed to store user`)
             }
         })
     }
-
-
 }
 
 module.exports = Users
