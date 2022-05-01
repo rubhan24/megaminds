@@ -1,19 +1,14 @@
-
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import AddUsers from './components/addUsers/addUsers';
-import Form from './components/form/form';
-import Leaderboard from './components/leaderboard/leaderboard';
+import Home from './pages/Home';
+
 
 
 function App() {
   return (
-    <div className="App">
-    <h1 className="Title">MasterMinds!</h1>
-    <Leaderboard />
-    <Form />
-    <AddUsers />
-   
-    </div>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+    </Routes>
   );
 }
 

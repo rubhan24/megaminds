@@ -1,7 +1,7 @@
 import React from 'react'
-import './addUsers.css'
+import './style.css'
 
-function addUsers() {
+function AddUsers() {
   return (
     <div className="addUser">
         <button className="adduserButton">Add Users</button>
@@ -9,4 +9,4 @@ function addUsers() {
   )
 }
 
-export default addUsers
+export default AddUsers

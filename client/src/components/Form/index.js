@@ -1,7 +1,7 @@
 import React from 'react'
-import './form.css'
+import './style.css'
 
-function form() {
+function Form() {
   return (
     <div className='form'>
       <form>
@@ -38,4 +38,4 @@ function form() {
   )
 }
 
-export default form
+export default Form
