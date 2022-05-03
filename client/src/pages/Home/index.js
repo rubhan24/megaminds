@@ -1,13 +1,14 @@
 import React from 'react'
-import { Addusers, Form, Leaderboard } from '../../components'
+import { Addusers, Form, Leaderboard, ModalUser } from '../../components'
 
 function Home() {
   return (
-    <div>
+    <div className="body">
         <h1 className="Title">MasterMinds!</h1>
         <Leaderboard />
         <Form />
         <Addusers/>
+        {/* {openModal && <ModalUser />} */}
     </div>
   )
 }
