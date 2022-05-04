@@ -23,10 +23,12 @@ function Timer() {
             setTimer(  
                 (seconds > 9 ? seconds : '0'+seconds)
             )
-    }else{
+    } else {
         clearInterval(intervalRef.current);
-    
     }
+    // } else {
+    //     alert('QUIZ OVER! You have run out of time :(')
+    // }
 }
 // below allows us to reset the timer when clicking on the next question
 function clearTimer(endtime){
