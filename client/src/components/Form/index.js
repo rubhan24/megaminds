@@ -60,7 +60,7 @@ function Form() {
   
   return (
     <div className='form'>
-      <form>
+      <form role="form">
         <label className="players">
           Pick number of players:
           <select id="pla" className="playersOption" onChange={(e)=>setNumPlayers(e.target.value)} >
@@ -87,7 +87,6 @@ function Form() {
             <option value="hard">Hard</option>
           </select>
         </ul>
-      {console.log(playerOne, playerTwo, playerThree, playerFour)}
       
         <button className="startButton">START</button>
       </form>
