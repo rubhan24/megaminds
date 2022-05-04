@@ -7,8 +7,6 @@ function Home() {
         <h1 className="Title">MasterMinds!</h1>
         <LeaderboardBtn />
         <Form />
-        <Addusers/>
-        {/* {openModal && <ModalUser />} */}
     </div>
   )
 }
