@@ -6,7 +6,9 @@ const initState = {
     question_cat: 9,
     question_difficulty: 'easy',
     amount_of_questions:10,
-    num_players:1
+    num_players:1,
+    quizData: [],
+    score:0
 }
 
 const reducer = (state=initState, action) =>{
@@ -47,6 +49,19 @@ const reducer = (state=initState, action) =>{
             ...state, 
             question_difficulty: action.value
         }
+        case "ADD_QUIZDATA":
+            return {
+                ...state, 
+                quizData: action.value
+            }
+        case "UPDATE_SCORE":
+            return {
+                ...state, 
+                score: state.score+1
+            }
+        case "RESET":
+            return initState
+            
         default: 
             return state;
     }
