@@ -12,7 +12,7 @@ function NameInputTwo({playerOne, playerTwo}) {
   return (
     <>
     <div className='body'  >
-        <h2>Name:</h2>
+        <h2 data-testid="name2">Name:</h2>
         <input type="text" onChange={savePlayer1} ></input>
     </div>
     <div className='body'  >

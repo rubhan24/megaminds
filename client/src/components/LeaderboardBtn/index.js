@@ -12,7 +12,7 @@ function LeaderboardBtn() {
 
   return (
     <div className="leaderboard">
-        <button className="leaderbutton" onClick={handleClick}>Leaderboard</button>
+        <button role="leaderbtn" className="leaderbutton" onClick={handleClick}>Leaderboard</button>
     </div>
   )
 }

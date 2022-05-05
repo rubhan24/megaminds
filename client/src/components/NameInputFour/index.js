@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function NameInputFour({playerOne, playerTwo, playerThree, playerFour}) {
   const savePlayer1=(e)=>{
@@ -20,7 +20,7 @@ function NameInputFour({playerOne, playerTwo, playerThree, playerFour}) {
   return (
     <>
     <div className='body'  >
-        <h2>Name:</h2>
+        <h2 data-testid="name4">Name:</h2>
         <input type="text" onChange={savePlayer1}></input>
     </div>
     <div className='body'  >

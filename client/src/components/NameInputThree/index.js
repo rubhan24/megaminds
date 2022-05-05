@@ -15,7 +15,7 @@ function NameInputThree({playerOne, playerTwo, playerThree}) {
   return (
     <>
     <div className='body'  >
-        <h2>Name:</h2>
+        <h2 data-testid="name3">Name:</h2>
         <input type="text" onChange={savePlayer1}></input>
     </div>
     <div className='body'  >
