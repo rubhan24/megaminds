@@ -61,10 +61,10 @@ function Results() {
 
   return (
       <>
-    <div>
-        <table>
+    <div role="resultstable">
+        <table data-testid="table">
             <thead>
-                <tr>
+                <tr data-testid="tr">
                     <th>Rank</th>
                     <th>Username</th>
                     <th>Score</th>
@@ -84,7 +84,7 @@ function Results() {
             {allPlayerInfo.length>1 && renderData()}
     </table>
     </div>
-    <button onClick={handleClick}>Play Again!</button>
+    <button role="playAgain" onClick={handleClick}>Play Again!</button>
     </>
   )
 }

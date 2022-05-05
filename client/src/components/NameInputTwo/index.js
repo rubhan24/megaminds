@@ -31,7 +31,7 @@ function NameInputTwo() {
         <input type="text" onChange={savePlayer1} required></input>
     </div>
     <div className='body'  >
-        <h2>Name:</h2>
+        <h2 data-testid="name2">Name:</h2>
         <input type="text" onChange={savePlayer2} required></input>
     </div>
     </>

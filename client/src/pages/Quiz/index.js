@@ -22,7 +22,7 @@ function Quiz() {
 
    
   return (
-    <div>
+    <div role = "Questionaire" data-testid="quiz">
       {<Questionaire/>}
     </div>
   )

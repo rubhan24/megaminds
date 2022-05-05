@@ -24,9 +24,9 @@ function Leaderboard() {
     })
 
   return (
-      <table>
+      <table data-testid="table">
         <thead>
-            <tr>
+            <tr data-testid="tr">
                 <th>Rank</th>
                 <th>Username</th>
                 <th>Score</th>

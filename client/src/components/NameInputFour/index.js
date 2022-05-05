@@ -47,7 +47,7 @@ function NameInputFour() {
         <input type="text" onChange={savePlayer3} required></input>
     </div>
     <div className='body'  >
-        <h2>Name:</h2>
+        <h2 data-testid="name4">Name:</h2>
         <input type="text" onChange={savePlayer4} required></input>
     </div>
     </>

@@ -81,7 +81,7 @@ function Form() {
 
   return (
     <div className='form'>
-      <form onSubmit={handleClick}>
+      <form role="form" onSubmit={handleClick}>
         <label className="players">
           Pick number of players:
           <select id="pla" className="playersOption" onChange={saveNumPlayer} >
@@ -109,7 +109,7 @@ function Form() {
           </select>
         </ul>
       
-        <button className="startButton" type="submit" >START</button>
+        <button role="formbutton" className="startButton" type="submit">START</button>
       </form>
     </div>
   )

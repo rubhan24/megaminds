@@ -51,10 +51,10 @@ function Questionaire() {
 
 
   return (
-    <div>
+    <div role="questionairediv">
       {playerOne && <p>{playerOne}</p>}
       {quizData && <p>{question}</p>}
-      {options && options.map((answer, i)=> (<button onClick={handleClick} value={answer} key={i}>{answer}</button>))}
+      {options && options.map((answer, i)=> (<button role="questionairebtn" onClick={handleClick} value={answer} key={i}>{answer}</button>))}
       {score}
 
     </div>
