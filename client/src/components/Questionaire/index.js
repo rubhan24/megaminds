@@ -10,7 +10,7 @@ function Questionaire() {
     const [question, setQuestion]=useState([])
     const quizData = useSelector((state) => state.quizData);
     const [disabled, setDisabled] = useState(false)
-    const [style, setStyle] = useState('green')
+    const [color, setColor] = useState('black')
 
     const randomiser = () =>{
       return(Math.floor(Math.random()*3))
@@ -40,13 +40,12 @@ function Questionaire() {
         setDisabled(true)
 
         console.log(e.target)
-        e.target.style.color = 'green'
-        setStyle('black')
+        setColor('green')
         dispatch({
           type: "UPDATE_SCORE",
         });  
       } else if (e.target.value !== question.correct_answer ){
-        e.target.style.color = 'red'
+       setColor('red')
         setDisabled(true)
 
       }
@@ -59,7 +58,8 @@ function Questionaire() {
       setDisabled(false)
       const button = document.querySelector('.default')
       if(questionIndex+1 <quizData.length){
-        setQuestionIndex(questionIndex+1)
+        setQuestionIndex(questionIndex+1);
+        setColor('black')
       } else{
           navigate('/results')
       }
@@ -70,7 +70,7 @@ function Questionaire() {
     <div>
       {playerOne && <p>{playerOne}</p>}
       {quizData && <p>{question}</p>}
-      {options && options.map((answer, i)=> (<button onClick={handleClick} className="default" disabled={disabled} value={answer} key={i}>{answer}</button>))}
+      {options && options.map((answer, i)=> (<button style={{color}} onClick={handleClick} className="default" disabled={disabled} value={answer} key={i}>{answer}</button>))}
       {score}
       <button onClick={handleNextClick}>Next!</button> 
     </div>
