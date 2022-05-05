@@ -1,0 +1,9 @@
+button.correct {
+    background-color: rgb(135, 219, 135);
+    color: white;
+  }
+  
+  button.selected {
+    background-color: rgb(206, 109, 109);
+    color: white;
+  }

@@ -1,0 +1,39 @@
+.players{
+    text-align: center;
+    padding: 30px;
+    font-size: 25px;
+}
+
+.playersOption{
+    font-size: 25px;
+}
+
+.topics{
+    text-align: center;
+    padding: 30px;
+    font-size: 25px;
+}
+
+.topicOption{
+    font-size: 25px;
+}
+
+.difficulty{
+    text-align: center;
+    padding: 30px;
+    font-size: 25px;
+}
+
+.difficultyOption{
+    font-size: 25px;
+}
+
+.leaderboard{
+    padding: 50px;
+ }
+ 
+ .leaderbutton{
+     font-size: 30px;
+     color: white;
+     background-color: orange;
+ }

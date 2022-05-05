@@ -8,7 +8,8 @@ const initState = {
     amount_of_questions:10,
     num_players:1,
     quizData: [],
-    score:0
+    score:0,
+    curr_question:0
 }
 
 const reducer = (state=initState, action) =>{
@@ -58,6 +59,11 @@ const reducer = (state=initState, action) =>{
             return {
                 ...state, 
                 score: state.score+1
+            }
+        case "UPDATE_CURR_QUESTION":
+            return {
+                ...state, 
+                curr_question: state.curr_question+1
             }
         case "RESET":
             return initState

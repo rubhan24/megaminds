@@ -17,8 +17,8 @@ function NameInputOne() {
   return (
     <>
     <div className='body'  >
-        <h2>Name:</h2>
-        <input type="text" onChange={savePlayer1} required></input>
+        <label for="PlayerOneName">Name:</label>
+        <input id="PlayerOneName" type="text" onChange={savePlayer1} required></input>
     </div>
     </>
   )

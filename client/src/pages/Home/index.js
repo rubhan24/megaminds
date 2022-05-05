@@ -1,6 +1,6 @@
 import React from 'react'
 import { Addusers, Form, LeaderboardBtn, ModalUser } from '../../components'
-
+import './style.css'
 function Home() {
   return (
     <div className="body">

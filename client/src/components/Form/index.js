@@ -83,7 +83,7 @@ function Form() {
     <div className='form'>
       <form onSubmit={handleClick}>
         <label className="players">
-          Pick number of players:
+          Number of Players: 
           <select id="pla" className="playersOption" onChange={saveNumPlayer} >
             <option value="1">1</option>
             <option value="2">2</option>
