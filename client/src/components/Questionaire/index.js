@@ -9,21 +9,23 @@ function Questionaire() {
     const [options, setOptions] = useState([])
     const [question, setQuestion]=useState([])
     const quizData = useSelector((state) => state.quizData);
+    const [disabled, setDisabled] = useState(false)
+    const [color, setColor] = useState('black')
+
+    const randomiser = () =>{
+      return(Math.floor(Math.random()*3))
+    }
 
     useEffect(()=>{
       if(quizData?.length) {
         const question = quizData[questionIndex]
         const answer = [...question.incorrect_answers]
-        answer.splice(randomiser, 0, question.correct_answer)
+        answer.splice(randomiser(), 0, question.correct_answer)
         setOptions(answer)
       }
     }, [quizData, questionIndex])
 
-    const randomiser = () =>{
-      return(Math.floor(Math.random()*3))
-    }
-    
-    
+        
     useEffect(()=>{
       if(quizData?.length) {
         const questions = quizData[questionIndex]
@@ -35,28 +37,42 @@ function Questionaire() {
     const handleClick = (e) => {
       const question = quizData[questionIndex]
       if(e.target.value === question.correct_answer ){
+        setDisabled(true)
+
+        console.log(e.target)
+        setColor('green')
         dispatch({
           type: "UPDATE_SCORE",
         });  
-      }
-      if(questionIndex+1 <quizData.length){
-        setQuestionIndex(questionIndex+1)
-      } else{
-          navigate('/results')
+      } else if (e.target.value !== question.correct_answer ){
+       setColor('red')
+        setDisabled(true)
+
       }
     }
 
     const score = useSelector((state) => state.score);
     const playerOne = useSelector((state) => state.playerOne);
+    
+    const handleNextClick =()=>{
+      setDisabled(false)
+      const button = document.querySelector('.default')
+      if(questionIndex+1 <quizData.length){
+        setQuestionIndex(questionIndex+1);
+        setColor('black')
+      } else{
+          navigate('/results')
+      }
+    }
 
 
   return (
     <div role="questionairediv">
       {playerOne && <p>{playerOne}</p>}
       {quizData && <p>{question}</p>}
-      {options && options.map((answer, i)=> (<button role="questionairebtn" onClick={handleClick} value={answer} key={i}>{answer}</button>))}
+      {options && options.map((answer, i)=> (<button role="questionairebtn"  style={{color}} onClick={handleClick} className="default" disabled={disabled} value={answer} key={i}>{answer}</button>))}
       {score}
-
+      <button onClick={handleNextClick}>Next!</button> 
     </div>
   )
 }
