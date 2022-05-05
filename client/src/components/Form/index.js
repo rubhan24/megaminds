@@ -1,12 +1,17 @@
-import React, {useState} from 'react'
+import React  from 'react'
 // import ModalUser from '../ModalUser'
 import NameInputFour from '../NameInputFour'
 import NameInputOne from '../NameInputOne'
 import NameInputThree from '../NameInputThree'
 import NameInputTwo from '../NameInputTwo'
 import './style.css'
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from 'react-router';
 
 function Form() {
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
+
   const optionArray = [
     { category: "General Knowledge", value: 9,},
     { category: "Books", value: 10 },
@@ -33,37 +38,53 @@ function Form() {
     { category: "Japanese Anime", value: 31 },
     { category: "Cartoon and Animations", value: 32 },
   ]
-
   
-  // const [openModal, setOpenModal] = useState(false)
-  const [category, setCategory] = useState(9)
-  const [difficulty, setDifficulty] = useState('Easy')
-  const [numPlayers, setNumPlayers] = useState(1)
-
-  const [playerOne, setPlayerOne] =useState('')
-  const [playerTwo, setPlayerTwo] =useState('')
-  const [playerThree, setPlayerThree] =useState('')
-  const [playerFour, setPlayerFour] =useState('')
-
- 
   const playerName = () => {
-    if (numPlayers==1){
-      return( <NameInputOne playerOne = {setPlayerOne}/>)
-    } else if (numPlayers==2){
-      return(<NameInputTwo playerOne={setPlayerOne} playerTwo={setPlayerTwo}/>)
-    } else if(numPlayers==3){
-      return(<NameInputThree playerOne={setPlayerOne} playerTwo={setPlayerTwo} playerThree={setPlayerThree}/>)
-    } else if (numPlayers==4){
-      return(<NameInputFour playerOne={setPlayerOne} playerTwo={setPlayerTwo} playerThree={setPlayerThree} playerFour={setPlayerFour}/>)
+    if (parseInt(numPlayers)===1){
+      return( <NameInputOne />)
+    } else if (parseInt(numPlayers)===2){
+      return(<NameInputTwo />)
+    } else if(parseInt(numPlayers)===3){
+      return(<NameInputThree  />)
+    } else if (parseInt(numPlayers)===4){
+      return(<NameInputFour/>)
     }
   }
-  
+
+  const saveNumPlayer=(e)=>{
+    dispatch({
+      type: "UPDATE_NUM_PLAYERS",
+      value: e.target.value,
+    })
+  }
+
+  const saveCategory = (e) =>{
+    dispatch({
+      type: "UPDATE_CAT",
+      value: e.target.value,
+    })
+  }
+
+  const saveDifficulty = (e) =>{
+    dispatch({
+      type: "SET_DIFFICULTY",
+      value: e.target.value,
+    })
+  }
+
+  const numPlayers = useSelector((state) => state.num_players);
+
+  const handleClick = ()=>{
+    navigate('/quiz')
+  }
+
+
   return (
     <div className='form'>
-      <form>
+      <form onSubmit={handleClick}>
         <label className="players">
           Pick number of players:
-          <select id="pla" className="playersOption" onChange={(e)=>setNumPlayers(e.target.value)} >
+          <select id="pla" className="playersOption" onChange={saveNumPlayer} >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -75,21 +96,20 @@ function Form() {
 
         <ul className="topics">
           Pick topic:
-          <select className="topicOption" onChange={(e)=>setCategory(e.target.value)}>
+          <select className="topicOption" onChange={saveCategory}>
             {optionArray.map((option, i)=><option value={option.value} key={i}>{option.category}</option>)}
           </select>
         </ul>
         <ul className="difficulty">
             Difficulty:
-          <select className="difficultyOption" onChange={(e)=>setDifficulty(e.target.value)}>
+          <select className="difficultyOption" onChange={saveDifficulty}>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
           </select>
         </ul>
-      {console.log(playerOne, playerTwo, playerThree, playerFour)}
       
-        <button className="startButton">START</button>
+        <button className="startButton" type="submit" >START</button>
       </form>
     </div>
   )
