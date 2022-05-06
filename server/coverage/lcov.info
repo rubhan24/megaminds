@@ -19,7 +19,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:controllers\users.js
+SF:controllers/users.js
 FN:3,getAllUsers
 FN:13,createUser
 FNF:2
@@ -43,7 +43,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:db_Config\config.js
+SF:db_Config/config.js
 FNF:0
 FNH:0
 DA:1,3
@@ -55,7 +55,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:model\Users.js
+SF:model/Users.js
 FN:4,(anonymous_0)
 FN:10,(anonymous_1)
 FN:11,(anonymous_2)
@@ -132,7 +132,7 @@ BRF:24
 BRH:23
 end_of_record
 TN:
-SF:routes\userRoutes.js
+SF:routes/userRoutes.js
 FNF:0
 FNH:0
 DA:1,1

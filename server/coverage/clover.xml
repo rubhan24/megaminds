@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651660377526" clover="3.2.0">
-  <project timestamp="1651660377526" name="All files">
+<coverage generated="1651830924507" clover="3.2.0">
+  <project timestamp="1651830924509" name="All files">
     <metrics statements="61" coveredstatements="59" conditionals="24" coveredconditionals="23" methods="9" coveredmethods="9" elements="94" coveredelements="91" complexity="0" loc="61" ncloc="61" packages="5" files="5" classes="5"/>
     <package name="server">
       <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="server.js" path="C:\Users\Jaxsa\Desktop\getFutureProof_projects\Lap_3\Lap_3_Project\server\server.js">
+      <file name="server.js" path="/Users/farzana/megaminds5/server/server.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -19,7 +19,7 @@
     </package>
     <package name="server.controllers">
       <metrics statements="11" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="users.js" path="C:\Users\Jaxsa\Desktop\getFutureProof_projects\Lap_3\Lap_3_Project\server\controllers\users.js">
+      <file name="users.js" path="/Users/farzana/megaminds5/server/controllers/users.js">
         <metrics statements="11" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="2" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -36,7 +36,7 @@
     </package>
     <package name="server.db_Config">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="config.js" path="C:\Users\Jaxsa\Desktop\getFutureProof_projects\Lap_3\Lap_3_Project\server\db_Config\config.js">
+      <file name="config.js" path="/Users/farzana/megaminds5/server/db_Config/config.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="3" type="stmt"/>
         <line num="3" count="3" type="stmt"/>
@@ -45,7 +45,7 @@
     </package>
     <package name="server.model">
       <metrics statements="32" coveredstatements="32" conditionals="24" coveredconditionals="23" methods="6" coveredmethods="6"/>
-      <file name="Users.js" path="C:\Users\Jaxsa\Desktop\getFutureProof_projects\Lap_3\Lap_3_Project\server\model\Users.js">
+      <file name="Users.js" path="/Users/farzana/megaminds5/server/model/Users.js">
         <metrics statements="32" coveredstatements="32" conditionals="24" coveredconditionals="23" methods="6" coveredmethods="6"/>
         <line num="1" count="3" type="stmt"/>
         <line num="5" count="4" type="stmt"/>
@@ -83,7 +83,7 @@
     </package>
     <package name="server.routes">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="userRoutes.js" path="C:\Users\Jaxsa\Desktop\getFutureProof_projects\Lap_3\Lap_3_Project\server\routes\userRoutes.js">
+      <file name="userRoutes.js" path="/Users/farzana/megaminds5/server/routes/userRoutes.js">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
