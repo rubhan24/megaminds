@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector } from "react-redux";
-import {useNavigate} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
+import Timer from '../Timer';
 import './style.css'
 function Questionaire() {
     const dispatch = useDispatch()
@@ -12,6 +13,7 @@ function Questionaire() {
     const [selectedAnswer, setSelectedAnswer] = useState(null);    
     const quizData = useSelector((state) => state.quizData);
     const [disabled, setDisabled] = useState(false)
+    const [style, setStyle] = useState('blue')
 
     const randomiser = () =>{
       return(Math.floor(Math.random()*3))
@@ -54,18 +56,17 @@ function Questionaire() {
     const score = useSelector((state) => state.score);
     const playerOne = useSelector((state) => state.playerOne);
     
-    const handleNextClick =()=>{
-      setDisabled(false)
-      const button = document.querySelector('.default')
-      if(questionIndex+1 <quizData.length){
-        setAnswerSelected(false)
-        setSelectedAnswer(null)
-        setQuestionIndex(questionIndex+1)
+    // const handleNextClick =()=>{
+    //   setDisabled(false)
+    //   if(questionIndex+1 <quizData.length){
+    //     setAnswerSelected(false)
+    //     setSelectedAnswer(null)
+    //     setQuestionIndex(questionIndex+1)
         
-      } else{
-          navigate('/results')
-      }
-    }
+    //   } else{
+    //       navigate('/results')
+    //   }
+    // }
 
     const getClass = (option) => {
       const correctAnswer = quizData[questionIndex].correct_answer
@@ -80,14 +81,32 @@ function Questionaire() {
       }
     };
 
+    const handleHome = () => {
+      navigate('/')
+    }
+
   return (
-    <div>
+    <div className='button' >
       {console.log('fired called')}
-      {playerOne && <p>{playerOne}</p>}
-      {quizData && <p>{question}</p>}
-      {options && options.map((answer, i)=> (<button onClick={handleClick} className={getClass(answer)} disabled={disabled} value={answer} key={i}>{answer}</button>))}
-      {score}
-      <button onClick={handleNextClick}>Next!</button> 
+      <button className='homeButton'onClick={handleHome}>Megaminds</button>
+      {playerOne && <p className='name'>{playerOne}</p>}
+      
+      <div className='questionCon'>
+      {quizData && <p className='question'>{question}</p>}
+      </div>
+      {options && options.map((answer, i)=> (<button style={{color: {style}}} onClick={handleClick} className={getClass(answer)} disabled={disabled} value={answer} key={i}>{answer}</button>))}
+      <p className='score'>Score: {score}/{questionIndex+1}</p>
+      <Timer
+      questionIndexFunc = {setQuestionIndex}
+      questionIndex = {questionIndex}
+      answerSelectedFun = {setAnswerSelected}
+      answerSelected = {answerSelected}
+      selectedAnswerFunc = {setAnswerSelected}
+      selectedAnswer = {answerSelected}
+      disabledFunc = {setDisabled}
+      disabled = {disabled}
+      />
+      {/* <button onClick={handleNextClick}>Next!</button>  */}
     </div>
   )
 }

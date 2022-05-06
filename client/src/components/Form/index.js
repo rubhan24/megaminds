@@ -83,7 +83,7 @@ function Form() {
     <div className='form'>
       <form role="form" onSubmit={handleClick}>
         <label className="players">
-          Pick number of players:
+          Number of players:
           <select id="pla" className="playersOption" onChange={saveNumPlayer} >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -95,7 +95,7 @@ function Form() {
         {playerName()}
 
         <ul className="topics">
-          Pick topic:
+          Topic:
           <select className="topicOption" onChange={saveCategory}>
             {optionArray.map((option, i)=><option value={option.value} key={i}>{option.category}</option>)}
           </select>

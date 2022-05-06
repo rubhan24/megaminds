@@ -1,9 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 button.correct {
-    background-color: rgb(135, 219, 135);
+    background-color: rgb(135, 219, 135) !important;
     color: white;
   }
   
   button.selected {
-    background-color: rgb(206, 109, 109);
+    background-color: rgb(206, 109, 109) !important;
     color: white;
   }
+
+
+  .name{
+    text-align: center;
+    height: 100%;
+    font-size: 30px;
+    text-transform: capitalize;
+    font-family: 'Bangers', cursive;
+    color: black;
+    text-shadow: 10px;
+    
+  }
+
+  .question{
+    font-family: 'Bangers', cursive;
+    display: flex; 
+    font-size: 30px;
+    color: white;
+    -webkit-text-stroke-width: 0.01px;
+    -webkit-text-stroke-color: black;
+    font-family: 'Bangers', cursive;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+   
+  
+
+  .button > button.homeButton{
+    background-color: transparent;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+     border-radius:0px;
+   border:0px;
+     display:inline-block;
+     cursor:pointer;
+     color:#0966c9;
+     font-family:Arial;
+     font-size:25px;
+     padding:6px 24px;
+     text-decoration:none;
+     text-shadow:0px 1px 0px #154682;
+     top: 40%;
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+   transform: translateX(0%);
+   font-size: 30px;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-right: 20%;
+  font-family: 'Bangers', cursive;
+  box-shadow: 10px;
+
+  }
+
+  .score{
+    font-family: 'Bangers', cursive;
+
+  }
+
+  .button > button{
+    box-shadow:inset 0px 1px 0px 0px #54a3f7;
+     /* background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%); */
+     border-radius:3px;
+     border:1px solid #124d77;
+     display:inline-block;
+     cursor:pointer;
+     color:#54a3f7;
+     font-family:Arial;
+     font-size:25px;
+     padding:6px 24px;
+     text-decoration:none;
+     text-shadow:0px 1px 0px #154682;
+     top: 40%;
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+   transform: translateX(0%);
+   font-size: 30px;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-right: 20%;
+  font-family: 'Bangers', cursive;
+  box-shadow: 10px;
+ }
+
+ .questionCon{
+  padding: 10px;
+ }
+ 
+
+ 
