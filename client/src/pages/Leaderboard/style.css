@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(247, 238, 238);
+}
+
+table {
+    border: 1px solid rgb(12, 11, 11);
+    border-collapse: collapse;
+    border-width: thick;
+    width: 100%;
+    height: 100%;
+}
+
+table th {
+    font-size: 30px;
+    color: rgb(185, 43, 43);
+}
+
+table tr {
+    height: 100%;
+}
+
+table td {
+    border: 1px solid black;
+    border-width: thick;
+    padding: 5px;
+    font-size: 23px;
+    
+}

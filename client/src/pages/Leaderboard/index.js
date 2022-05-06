@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './style.css'
 
 function Leaderboard() {
     const [data, setData] = useState([])

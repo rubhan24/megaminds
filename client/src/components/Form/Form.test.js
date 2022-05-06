@@ -2,6 +2,7 @@ import { default as Form } from '.';
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+
 describe('SearchForm', () => {
 
     test('it renders a form', () => {
