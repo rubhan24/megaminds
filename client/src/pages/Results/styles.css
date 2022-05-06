@@ -1,0 +1,17 @@
+table{
+    margin-bottom: 10%;
+}
+
+#resultsTable td{
+    color: rgb(180, 57, 57);
+}
+
+#playbtn {
+    width:100px;
+    height:30px;
+    margin: 0;
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    color: rgb(243, 24, 24);
+}

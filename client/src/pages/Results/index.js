@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import './styles.css';
 import { useSelector, useDispatch } from "react-redux";
 import {useNavigate} from 'react-router-dom'
 function Results() {
@@ -73,7 +74,7 @@ function Results() {
                 {playerInfo.length && renderPlayerData()}
         </table>
 
-    <table>
+    <table id='resultsTable'>
         <thead>
             <tr>
                 <th>Rank</th>
@@ -84,7 +85,7 @@ function Results() {
             {allPlayerInfo.length>1 && renderData()}
     </table>
     </div>
-    <button role="playAgain" onClick={handleClick}>Play Again!</button>
+    <button id='playbtn' role="playAgain" onClick={handleClick}>Play Again!</button>
     </>
   )
 }
